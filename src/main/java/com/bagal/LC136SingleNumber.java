@@ -18,4 +18,13 @@ public class LC136SingleNumber {
         }
         return result;
     }
+
+    //2nd approach
+    public static int singleNumber2(int[] nums) {
+        int result = 0;
+        for (int num:nums){
+            result = result ^ num;
+        }
+        return result;
+    }
 }
