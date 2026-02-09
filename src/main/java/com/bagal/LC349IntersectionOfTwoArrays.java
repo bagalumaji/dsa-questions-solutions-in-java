@@ -2,6 +2,7 @@ package com.bagal;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class LC349IntersectionOfTwoArrays {
@@ -46,5 +47,27 @@ public class LC349IntersectionOfTwoArrays {
             res[i++] = num;
         }
         return res;
+    }
+
+    //way 3
+    public static int[] intersection3(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+        int size = Math.min(nums1.length,nums2.length);
+        int [] result = new int[size];
+        int i=0, j=0, k=0;
+        while (i<nums1.length && j < nums2.length){
+            if(nums1[i] == nums2[j] && (k==0 || result[k-1]!=nums1[i])){
+                result[k++] = nums1[i];
+                i++;
+                j++;
+            } else if (nums1[i]<nums2[j]) {
+                i++;
+            }else {
+                j++;
+            }
+        }
+        return Arrays.copyOfRange(result,0,k);
     }
 }
