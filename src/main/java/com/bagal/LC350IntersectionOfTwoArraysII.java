@@ -1,13 +1,17 @@
 package com.bagal;
 
+import com.sun.source.tree.ArrayAccessTree;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.bagal.LC136SingleNumber.singleNumber2;
+
 public class LC350IntersectionOfTwoArraysII {
     public static int[] intersect(int[] nums1, int[] nums2) {
         if(nums1.length>nums2.length){
-            intersect(nums2,nums1);
+            return intersect(nums2,nums1);
         }
         int [] res  = new int[nums1.length];
         Map<Integer,Integer> map = new HashMap<>();
