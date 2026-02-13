@@ -1,5 +1,6 @@
 package com.bagal;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,5 +27,18 @@ public class LC136SingleNumber {
             result = result ^ num;
         }
         return result;
+    }
+
+    //way 3
+    public static int singleNumber3(int[] nums) {
+        Arrays.sort(nums);
+        int i=1;
+        while (i<nums.length){
+            if(nums[i]!= nums[i-1]){
+                return nums[i-1];
+            }
+            i=i+2;
+        }
+        return nums[nums.length-1];
     }
 }
