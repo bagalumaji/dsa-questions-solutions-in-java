@@ -1,8 +1,6 @@
 package com.bagal;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class LC387FirstUniqueCharacterInAString {
     //first approach
