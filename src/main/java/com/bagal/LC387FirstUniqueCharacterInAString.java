@@ -1,5 +1,9 @@
 package com.bagal;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class LC387FirstUniqueCharacterInAString {
     //first approach
     public static int firstUniqChar(String s) {
@@ -11,6 +15,22 @@ public class LC387FirstUniqueCharacterInAString {
             }
             i++;
         }
+        return -1;
+    }
+    //second approach
+    public static int firstUniqCharSecondApproach(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (map.get(s.charAt(i)) == 1) {
+                return i;
+            }
+        }
+
         return -1;
     }
 }
