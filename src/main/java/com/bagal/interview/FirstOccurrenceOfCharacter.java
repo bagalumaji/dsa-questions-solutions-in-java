@@ -1,8 +1,6 @@
 package com.bagal.interview;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class FirstOccurrenceOfCharacter {
     //first approach
@@ -15,9 +13,6 @@ public class FirstOccurrenceOfCharacter {
             System.out.print(c+" : "+str.indexOf(c)+" ");
         }
     }
-    public static void main(String[] args) {
-        printFirstOccurrenceOfCharacter2ndWay("abcaddef");
-    }
     //second approach
     public static void printFirstOccurrenceOfCharacter2ndWay(String str){
         Set<Character> set = new HashSet<>();
@@ -27,5 +22,14 @@ public class FirstOccurrenceOfCharacter {
             }
         }
     }
-
+    //third approach
+    public static void printFirstOccurrenceOfCharacter3rdWay(String str){
+        Map<Character,Integer> map = new HashMap<>();
+        for(int i = 0; i < str.length(); i++){
+            if(!map.containsKey(str.charAt(i))){
+                System.out.print(str.charAt(i)+" : "+i+" ");
+                map.put(str.charAt(i),1);
+            }
+        }
+    }
 }
