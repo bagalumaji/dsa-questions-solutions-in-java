@@ -21,10 +21,4 @@ public class SortPositiveNegativeAndZero {
         }
         return arr;
     }
-
-    public static void main(String[] args) {
-        int []arr = sortPositiveNegativeAndZero(new int[]{0,2,1,0,-9,0,5,0,6,-2,7,-5,0,3});
-        System.out.println(Arrays.toString(arr));
-        //System.out.println(arr);
-    }
 }
