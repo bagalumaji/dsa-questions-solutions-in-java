@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 //input - 0, 2, 1, 0, -9, 0, 5, 0, 6, -2, 7, -5, 0, 3
 //output- 0, 0, 0, 0, 0, -2, -5, -9, 1, 2, 3, 5, 6, 7
+
 public class SortPositiveNegativeAndZero {
     public static int[] sortPositiveNegativeAndZero(int []arr){
         Arrays.sort(arr);
